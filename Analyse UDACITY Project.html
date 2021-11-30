@@ -14256,13 +14256,29 @@ a.anchor-link {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Business-Understanding">Business Understanding<a class="anchor-link" href="#Business-Understanding">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Nowadays, more and more home offices are being made. I am interested in how things are changing. For this I have a data set from Stack Overflow. I will have a look at it, ask more questions and answer them.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Data-Understanding">Data Understanding<a class="anchor-link" href="#Data-Understanding">&#182;</a></h2>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import the libary</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -14284,7 +14300,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#load survey_results_public.csv in dataframe</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Next, we load the dataset into a DataFrame.</span>
 <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;survey_results_public.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -14530,7 +14546,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;HomeRemote&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span>
 </pre></div>
 
      </div>
@@ -14547,6 +14563,193 @@ a.anchor-link {
 
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&lt;bound method DataFrame.info of        Respondent                                       Professional  \
+0               1                                            Student   
+1               2                                            Student   
+2               3                             Professional developer   
+3               4  Professional non-developer who sometimes write...   
+4               5                             Professional developer   
+...           ...                                                ...   
+51387       51388                             Professional developer   
+51388       51389                                            Student   
+51389       51390                             Professional developer   
+51390       51391                             Professional developer   
+51391       51392  Professional non-developer who sometimes write...   
+
+                    ProgramHobby         Country      University  \
+0                      Yes, both   United States              No   
+1                      Yes, both  United Kingdom  Yes, full-time   
+2                      Yes, both  United Kingdom              No   
+3                      Yes, both   United States              No   
+4      Yes, I program as a hobby     Switzerland              No   
+...                          ...             ...             ...   
+51387  Yes, I program as a hobby   United States              No   
+51388                         No       Venezuela  Yes, full-time   
+51389  Yes, I program as a hobby          Canada              No   
+51390  Yes, I program as a hobby   United States              No   
+51391                         No         Ireland              No   
+
+                             EmploymentStatus  \
+0      Not employed, and not looking for work   
+1                          Employed part-time   
+2                          Employed full-time   
+3                          Employed full-time   
+4                          Employed full-time   
+...                                       ...   
+51387                      Employed full-time   
+51388                      Employed full-time   
+51389                      Employed full-time   
+51390                      Employed full-time   
+51391                      Employed full-time   
+
+                                         FormalEducation  \
+0                                       Secondary school   
+1      Some college/university study without earning ...   
+2                                      Bachelor&#39;s degree   
+3                                        Doctoral degree   
+4                                        Master&#39;s degree   
+...                                                  ...   
+51387                                  Bachelor&#39;s degree   
+51388                                    Master&#39;s degree   
+51389  Some college/university study without earning ...   
+51390                                  Bachelor&#39;s degree   
+51391                                  Bachelor&#39;s degree   
+
+                                          MajorUndergrad  \
+0                                                    NaN   
+1               Computer science or software engineering   
+2               Computer science or software engineering   
+3          A non-computer-focused engineering discipline   
+4               Computer science or software engineering   
+...                                                  ...   
+51387                                   A social science   
+51388            Computer programming or Web development   
+51389  Information technology, networking, or system ...   
+51390           Computer science or software engineering   
+51391           Computer science or software engineering   
+
+                                              HomeRemote  \
+0                                                    NaN   
+1                  More than half, but not all, the time   
+2      Less than half the time, but at least one day ...   
+3      Less than half the time, but at least one day ...   
+4                                                  Never   
+...                                                  ...   
+51387                              A few days each month   
+51388                                              Never   
+51389  Less than half the time, but at least one day ...   
+51390                                              Never   
+51391                                   It&#39;s complicated   
+
+                    CompanySize  ... StackOverflowMakeMoney Gender  \
+0                           NaN  ...      Strongly disagree   Male   
+1            20 to 99 employees  ...      Strongly disagree   Male   
+2      10,000 or more employees  ...               Disagree   Male   
+3      10,000 or more employees  ...               Disagree   Male   
+4            10 to 19 employees  ...                    NaN    NaN   
+...                         ...  ...                    ...    ...   
+51387      100 to 499 employees  ...               Disagree   Male   
+51388      100 to 499 employees  ...                    NaN   Male   
+51389        10 to 19 employees  ...                    NaN    NaN   
+51390   Fewer than 10 employees  ...               Disagree   Male   
+51391  10,000 or more employees  ...         Somewhat agree   Male   
+
+      HighestEducationParents  \
+0                 High school   
+1           A master&#39;s degree   
+2       A professional degree   
+3           A doctoral degree   
+4                         NaN   
+...                       ...   
+51387       A doctoral degree   
+51388       A master&#39;s degree   
+51389                     NaN   
+51390     A bachelor&#39;s degree   
+51391     A bachelor&#39;s degree   
+
+                                                    Race         SurveyLong  \
+0                           White or of European descent  Strongly disagree   
+1                           White or of European descent     Somewhat agree   
+2                           White or of European descent     Somewhat agree   
+3                           White or of European descent              Agree   
+4                                                    NaN                NaN   
+...                                                  ...                ...   
+51387           East Asian; White or of European descent           Disagree   
+51388  Black or of African descent; Hispanic or Latin...     Somewhat agree   
+51389                                                NaN                NaN   
+51390                       White or of European descent           Disagree   
+51391                       White or of European descent     Somewhat agree   
+
+      QuestionsInteresting QuestionsConfusing InterestedAnswers    Salary  \
+0           Strongly agree           Disagree    Strongly agree       NaN   
+1           Somewhat agree           Disagree    Strongly agree       NaN   
+2                    Agree           Disagree             Agree  113750.0   
+3                    Agree     Somewhat agree    Strongly agree       NaN   
+4                      NaN                NaN               NaN       NaN   
+...                    ...                ...               ...       ...   
+51387                Agree  Strongly disagree    Strongly agree   58000.0   
+51388                Agree           Disagree             Agree       NaN   
+51389                  NaN                NaN               NaN       NaN   
+51390                Agree           Disagree    Strongly agree   40000.0   
+51391       Strongly agree           Disagree    Strongly agree       NaN   
+
+       ExpectedSalary  
+0                 NaN  
+1             37500.0  
+2                 NaN  
+3                 NaN  
+4                 NaN  
+...               ...  
+51387             NaN  
+51388             NaN  
+51389             NaN  
+51390             NaN  
+51391             NaN  
+
+[51392 rows x 154 columns]&gt;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>There is a column HomeRemote, where it is indicated how often Home Office is done. But the time is written as text, e.g. Full Time or Never.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Let&#39;s look at what Home Remote texts are available:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;HomeRemote&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
@@ -14800,10 +15003,10 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Drop na Rows of HomeRemote</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#So that we can work well with the data, we now delete missing values in the HomeRemote column.</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;HomeRemote&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
 </pre></div>
 
@@ -14815,7 +15018,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
@@ -14834,7 +15037,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
@@ -14855,279 +15058,11 @@ a.anchor-link {
 <p>Since I would like to analyse the use and the connection with home office, I can only use a maximum of 44008 data lines for the analysis, since there is no information on Home Remote in approx. 7000 data lines.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;HomeRemote&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-</pre></div>
-
-     </div>
 </div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Prepare-Data">Prepare Data<a class="anchor-link" href="#Prepare-Data">&#182;</a></h2>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Respondent</th>
-      <th>Professional</th>
-      <th>ProgramHobby</th>
-      <th>Country</th>
-      <th>University</th>
-      <th>EmploymentStatus</th>
-      <th>FormalEducation</th>
-      <th>MajorUndergrad</th>
-      <th>CompanySize</th>
-      <th>CompanyType</th>
-      <th>...</th>
-      <th>StackOverflowMakeMoney</th>
-      <th>Gender</th>
-      <th>HighestEducationParents</th>
-      <th>Race</th>
-      <th>SurveyLong</th>
-      <th>QuestionsInteresting</th>
-      <th>QuestionsConfusing</th>
-      <th>InterestedAnswers</th>
-      <th>Salary</th>
-      <th>ExpectedSalary</th>
-    </tr>
-    <tr>
-      <th>HomeRemote</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>A few days each month</th>
-      <td>15454</td>
-      <td>15454</td>
-      <td>15454</td>
-      <td>15454</td>
-      <td>15454</td>
-      <td>15454</td>
-      <td>15454</td>
-      <td>14237</td>
-      <td>14644</td>
-      <td>14618</td>
-      <td>...</td>
-      <td>9779</td>
-      <td>10992</td>
-      <td>10965</td>
-      <td>10388</td>
-      <td>10876</td>
-      <td>10825</td>
-      <td>10797</td>
-      <td>10852</td>
-      <td>5107</td>
-      <td>221</td>
-    </tr>
-    <tr>
-      <th>About half the time</th>
-      <td>1769</td>
-      <td>1769</td>
-      <td>1769</td>
-      <td>1769</td>
-      <td>1769</td>
-      <td>1769</td>
-      <td>1769</td>
-      <td>1499</td>
-      <td>1331</td>
-      <td>1327</td>
-      <td>...</td>
-      <td>991</td>
-      <td>1107</td>
-      <td>1105</td>
-      <td>1028</td>
-      <td>1093</td>
-      <td>1090</td>
-      <td>1085</td>
-      <td>1094</td>
-      <td>335</td>
-      <td>80</td>
-    </tr>
-    <tr>
-      <th>All or almost all the time (I'm full-time remote)</th>
-      <td>4905</td>
-      <td>4905</td>
-      <td>4905</td>
-      <td>4905</td>
-      <td>4905</td>
-      <td>4905</td>
-      <td>4905</td>
-      <td>4081</td>
-      <td>2596</td>
-      <td>2587</td>
-      <td>...</td>
-      <td>3237</td>
-      <td>3581</td>
-      <td>3581</td>
-      <td>3384</td>
-      <td>3572</td>
-      <td>3551</td>
-      <td>3538</td>
-      <td>3553</td>
-      <td>905</td>
-      <td>169</td>
-    </tr>
-    <tr>
-      <th>It's complicated</th>
-      <td>1849</td>
-      <td>1849</td>
-      <td>1849</td>
-      <td>1849</td>
-      <td>1849</td>
-      <td>1849</td>
-      <td>1849</td>
-      <td>1640</td>
-      <td>1708</td>
-      <td>1706</td>
-      <td>...</td>
-      <td>1327</td>
-      <td>1479</td>
-      <td>1476</td>
-      <td>1399</td>
-      <td>1468</td>
-      <td>1469</td>
-      <td>1458</td>
-      <td>1465</td>
-      <td>647</td>
-      <td>43</td>
-    </tr>
-    <tr>
-      <th>Less than half the time, but at least one day each week</th>
-      <td>4147</td>
-      <td>4147</td>
-      <td>4147</td>
-      <td>4147</td>
-      <td>4147</td>
-      <td>4147</td>
-      <td>4147</td>
-      <td>3765</td>
-      <td>3717</td>
-      <td>3709</td>
-      <td>...</td>
-      <td>2671</td>
-      <td>2994</td>
-      <td>2986</td>
-      <td>2824</td>
-      <td>2970</td>
-      <td>2959</td>
-      <td>2954</td>
-      <td>2967</td>
-      <td>1263</td>
-      <td>85</td>
-    </tr>
-    <tr>
-      <th>More than half, but not all, the time</th>
-      <td>1909</td>
-      <td>1909</td>
-      <td>1909</td>
-      <td>1909</td>
-      <td>1909</td>
-      <td>1909</td>
-      <td>1909</td>
-      <td>1608</td>
-      <td>1268</td>
-      <td>1263</td>
-      <td>...</td>
-      <td>1088</td>
-      <td>1259</td>
-      <td>1249</td>
-      <td>1181</td>
-      <td>1239</td>
-      <td>1232</td>
-      <td>1228</td>
-      <td>1231</td>
-      <td>329</td>
-      <td>84</td>
-    </tr>
-    <tr>
-      <th>Never</th>
-      <td>13975</td>
-      <td>13975</td>
-      <td>13975</td>
-      <td>13975</td>
-      <td>13975</td>
-      <td>13975</td>
-      <td>13975</td>
-      <td>12427</td>
-      <td>13606</td>
-      <td>13568</td>
-      <td>...</td>
-      <td>8433</td>
-      <td>9558</td>
-      <td>9539</td>
-      <td>9028</td>
-      <td>9451</td>
-      <td>9381</td>
-      <td>9340</td>
-      <td>9407</td>
-      <td>4297</td>
-      <td>450</td>
-    </tr>
-  </tbody>
-</table>
-<p>7 rows × 153 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -15182,7 +15117,7 @@ Name: HomeRemote, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_features.html</span>
@@ -15283,7 +15218,7 @@ Name: HomeRemote, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To answer the first question, I can only use about 13000 data rows, the rest have no content available.</p>
+<p>To answer the first question, I can only use about 13000 data rows, the rest have no content available. Here, it is not worth refilling the unknown salaries, since we have a data set of 44000 and only have a salary for 13000. If we would take the average of all for 2/3 would equalize.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15430,7 +15365,7 @@ Name: Salary, dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To answer the second question, I can only use about 32400 data rows, the rest do not have a weekly hour available.</p>
+<p>To answer the second question, I can only use about 32400 data rows, the rest do not have a weekly hour available. I can't fill them up either because there is no correlation when someone starts that could have been predicted.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15596,20 +15531,17 @@ Name: Salary, dtype: float64</pre>
 <p>In the statistics you can see that it doesn't matter whether you work at home or in the office, people prefer to start work between 8-10 am.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>I wanted to know how HomeOffice affects. For this purpose I worked out 3 questions and one can say that HomeOffize has arrived in today's time. Home office is very well accepted and the number of people who work only from home is even a little more than those who work only in the office. Furthermore, we have found that those who work more at home earn more on average than those who work only in the office. The working hours are similar between those who work at home and those who work in the office. Here we have only looked at three parameters, but there are others that could be taken into consideration.</p>
 
-     </div>
 </div>
-</div>
-</div>
-
 </div>
 </body>
 
